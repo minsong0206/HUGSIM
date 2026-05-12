@@ -1,0 +1,66 @@
+# Python cache/build
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual env / package env
+.venv/
+venv/
+.env
+.pixi/
+**/.pixi/
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+
+# Large model/data/artifacts
+**/Datasets/
+**/datasets/
+**/data_output/
+**/outputs/
+**/weights/
+**/checkpoints/
+**/ckpts/
+**/hf_release/
+ASAP/out/
+**/Nuscenes_RAW_DATA/
+
+# Common heavy file types
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.onnx
+*.db
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.npy
+*.npz
+*.pcd
+*.ply
+*.mp4
+*.mov
+*.avi
+
+# Non-code media artifacts
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+
+# Notebook checkpoints
+.ipynb_checkpoints/

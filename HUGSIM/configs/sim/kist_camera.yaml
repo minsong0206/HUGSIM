@@ -1,0 +1,89 @@
+cams:
+  CAM_BACK:
+    extrinsics:
+      l2c_rot: [-175.9728, -1.7152, -177.4945]
+      l2c_trans: [-0.0518, 0.1988, -3.1748]
+      v2c_rot: [-175.9728, -1.7152, -177.4945]
+      v2c_trans: [-0.0518, 0.1988, -3.1748]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 104.7395
+      fovy: 72.2308
+  CAM_BACK_LEFT:
+    extrinsics:
+      l2c_rot: [-120.7559, 83.8048, 120.5674]
+      l2c_trans: [2.4713, 0.4104, -0.5685]
+      v2c_rot: [-120.7559, 83.8048, 120.5674]
+      v2c_trans: [2.4713, 0.4104, -0.5685]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 104.7088
+      fovy: 72.2006
+  CAM_BACK_RIGHT:
+    extrinsics:
+      l2c_rot: [-92.2698, -83.7164, -91.6518]
+      l2c_trans: [-2.5462, 0.5092, -0.4753]
+      v2c_rot: [-92.2698, -83.7164, -91.6518]
+      v2c_trans: [-2.5462, 0.5092, -0.4753]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 104.3889
+      fovy: 71.8861
+  CAM_FRONT:
+    extrinsics:
+      l2c_rot: [0.0, 0.0, 0.0]
+      l2c_trans: [0.0, 0.0, 0.0]
+      v2c_rot: [0.0, 0.0, 0.0]
+      v2c_trans: [0.0, 0.0, 0.0]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 104.1828
+      fovy: 71.6841
+  CAM_FRONT_LEFT:
+    extrinsics:
+      l2c_rot: [-3.9254, 56.0573, 3.5945]
+      l2c_trans: [1.1405, 0.2513, 0.0376]
+      v2c_rot: [-3.9254, 56.0573, 3.5945]
+      v2c_trans: [1.1405, 0.2513, 0.0376]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 104.6593
+      fovy: 72.1518
+  CAM_FRONT_RIGHT:
+    extrinsics:
+      l2c_rot: [-6.0156, -59.7403, -1.8905]
+      l2c_trans: [-1.2357, 0.2672, 0.0368]
+      v2c_rot: [-6.0156, -59.7403, -1.8905]
+      v2c_trans: [-1.2357, 0.2672, 0.0368]
+    intrinsics:
+      H: 450
+      W: 800
+      cx: 400.0
+      cy: 225.0
+      fovx: 103.9730
+      fovy: 71.4789
+
+cam_rect:
+  rot: [0.0, 0.0, 0.0]
+  trans: [0.0, 0.0, 0.0]
+
+cam_align:
+  [
+    ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT'],
+    ['CAM_BACK_RIGHT',  'CAM_BACK',  'CAM_BACK_LEFT'],
+  ]
