@@ -9,8 +9,8 @@ ignore_dynamic: False
 data_type: kist
 
 opt:
-  position_lr_max_steps: 60000
+  position_lr_max_steps: 30000
 
 train:
-  iterations: 60000
+  iterations: 30000
   checkpoint_iterations: [7000, 15000, 30000, 45000, 60000]

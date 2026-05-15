@@ -72,7 +72,8 @@ def training(cfg):
 
     train_cams = scene.getTrainCameras().copy()
     train_dataset = HUGSIM_dataset(train_cams, cfg.data_type)
-    train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, pin_memory=True, collate_fn=hugsim_collate)
+    pin = (cfg.model.data_device == "cpu")
+    train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, pin_memory=pin, collate_fn=hugsim_collate)
 
     for iteration in range(first_iter, cfg.train.iterations + 1):        
 

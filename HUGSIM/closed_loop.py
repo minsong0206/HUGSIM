@@ -2,6 +2,9 @@ import sys
 import os
 sys.path.append(os.getcwd())
 
+import random
+import numpy as np
+import torch
 import gymnasium
 import hugsim_env
 from argparse import ArgumentParser
@@ -13,8 +16,15 @@ from sim.utils.launch_ad import launch, check_alive
 from omegaconf import OmegaConf
 import open3d as o3d
 from sim.utils.score_calculator import hugsim_evaluate
-import numpy as np
 from moviepy import ImageSequenceClip
+
+SEED = 42
+
+def set_seed(seed: int):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
 def to_video(observations, output_path):
     frames = []
@@ -115,6 +125,8 @@ if __name__ == "__main__":
     parser.add_argument('--ad', default="uniad")
     parser.add_argument('--ad_cuda', default="1")
     args = parser.parse_args()
+
+    set_seed(SEED)
 
     scenario_config = OmegaConf.load(args.scenario_path)
     base_config = OmegaConf.load(args.base_path)

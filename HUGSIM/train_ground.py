@@ -44,8 +44,8 @@ def training(cfg):
     train_cams, test_cams, _ = load_cameras(cfg, cfg.data_type, True)
     train_dataset = HUGSIM_dataset(train_cams, cfg.data_type)
     test_dataset = HUGSIM_dataset(test_cams, cfg.data_type)
-    train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, pin_memory=True, collate_fn=hugsim_collate)
-    test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False, pin_memory=True, collate_fn=hugsim_collate)
+    train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, pin_memory=False, collate_fn=hugsim_collate)
+    test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False, pin_memory=False, collate_fn=hugsim_collate)
 
     first_iter = 0
     prepare_output(cfg)

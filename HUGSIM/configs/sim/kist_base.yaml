@@ -1,10 +1,10 @@
 realcar_path: /home/ms/HUGSIM_N/HUGSIM/hf_release/3DRealCar/converted
-model_base: /media/ms/WD_BLACK_4TB/KIST/raw_data_curve/export
+model_base: /media/ms/WD_BLACK_4TB/KIST/raw_data_curve_ground_export
 uniad_path: /nas/users/hyzhou/PAMI2024/release/UniAD_Sim/tools/e2e.sh
 vad_path: /nas/users/hyzhou/PAMI2024/release/VAD_Sim/tools/e2e.sh
 ltf_path: /home/ms/clients/NAVSIM/ltf_e2e.sh
 drivor_path: /home/ms/DrivoR_N/DrivoR/drivor_e2e.sh
-output_dir: /media/ms/WD_BLACK_4TB/KIST/raw_data_curve/output
+output_dir: /media/ms/WD_BLACK_4TB/KIST/raw_data_curve_ground_output
 HD_map:
   path: null
   version: null

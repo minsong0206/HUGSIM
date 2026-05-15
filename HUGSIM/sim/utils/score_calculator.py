@@ -525,13 +525,13 @@ class ScoreCalculator:
                 frame['ego_box'], planned_traj, obs_lists, self.data['scene_xyz'])
             score_dac = self._calculate_drivable_area_compliance(
                 self.data['ground_xy'], planned_traj, ego_w, ego_l)
-            
+
             # score_nc = self._single_frame_no_collision(
             #     frame['ego_box'], obs_lists[0], self.data['scene_xyz'], timestamp)
             # # score_nc = 0.0 if frame['collision'] else 1.0
             # score_dac = self._single_frame_drivable_area_compliance(
             #     self.data['ground_xy'], frame['ego_box'], ego_w, ego_l)
-            
+
             score_ttc = self._calculate_time_to_collision(
                 frame['ego_box'], planned_traj, obs_lists, self.data['scene_xyz'], frame['planned_traj']['timestep'])
             
@@ -602,12 +602,12 @@ def parse_data(test_path):
     ground_pcd = o3d.io.read_point_cloud(ground_pcd_file_name)
     ground_xyz = np.asarray(ground_pcd.points) # in camera coordinates
     ground_xy = np.stack([ground_xyz[:, 2], -ground_xyz[:, 0]], axis=1) # in imu coordinates
-    
+
     scene_pcd = o3d.io.read_point_cloud(scene_pcd_file_name)
     scene_xyz = np.asarray(scene_pcd.points) # in camera coordinates
     # in imu coordinates
-    scene_xyz = np.stack([scene_xyz[:, 2], -scene_xyz[:, 0], -scene_xyz[:, 1]], axis=1) 
-    
+    scene_xyz = np.stack([scene_xyz[:, 2], -scene_xyz[:, 0], -scene_xyz[:, 1]], axis=1)
+
     data[0]['ground_xy'] = ground_xy
     data[0]['scene_xyz'] = torch.from_numpy(scene_xyz).cuda()
     # data[0]['scene_xyz'] = scene_xyz
@@ -619,7 +619,7 @@ def hugsim_evaluate(test_data, ground_xyz, scene_xyz, new_score_weight=None):
         global score_weight
         score_weight = new_score_weight
     ground_xy = np.stack([ground_xyz[:, 2], -ground_xyz[:, 0]], axis=1) # in imu coordinates
-    scene_xyz = np.stack([scene_xyz[:, 2], -scene_xyz[:, 0], -scene_xyz[:, 1]], axis=1) 
+    scene_xyz = np.stack([scene_xyz[:, 2], -scene_xyz[:, 0], -scene_xyz[:, 1]], axis=1)
     test_data[0]['ground_xy'] = ground_xy
     test_data[0]['scene_xyz'] = torch.from_numpy(scene_xyz).float().cuda()
     results = calculate(test_data)
