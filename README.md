@@ -8,7 +8,7 @@
   - dataset reader
   - PreProcessing (estimate_depth.py)
 
-# InversForm
+# InverseForm
 - segmentation model
 - todo
-  []Add crosswalk
+  - Add crosswalk
